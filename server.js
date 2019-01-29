@@ -20,6 +20,9 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
+app.get("/",function(req,res){
+    res.sendFile("home.html",{root:__dirname})
+})  
 app.get("/api/:pin",function(req,res){
     const pin=Number(req.params.pin);
     entries.collection("entry").findOne({'pin':pin},function(err,resp){
