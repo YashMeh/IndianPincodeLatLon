@@ -5,8 +5,8 @@ const express=require("express");
 const app=express();
 const bodyParser=require("body-parser");
 const port=process.env.PORT || 3000
-var url=process.env.URI;
-var entries;
+const url=process.env.URI;
+const entries;
 MongoClient.connect(url,function(err,db){
     if(err)
     throw err;
